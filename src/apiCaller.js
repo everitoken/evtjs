@@ -1202,7 +1202,7 @@ class APICaller {
             }
         }
         else if (res && res.processed && res.processed.receipt && res.processed.receipt.status === "executed") {
-            return { transactionId: res.transaction_id, body };
+            return { transactionId: res.transaction_id, charge: res.processed.charge, body };
         }
         else {
             // throw error detail
