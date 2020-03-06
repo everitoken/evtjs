@@ -1,94 +1,94 @@
 {
-    "name": "evtjs",
-    "version": "5.6.0",
-    "description": "Javascript API Bindings for the everiToken blockchain.",
-    "main": "lib/index.js",
-    "types": "./lib/index.d.ts",
-    "scripts": {
-        "test": "mocha --use_strict src/*.test.js",
-        "test_lib": "mocha --use_strict lib/*.test.js",
-        "coverage": "nyc --reporter=html npm test",
-        "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
-        "build": "babel --copy-files src --out-dir lib",
-        "build_browser": "npm run build && mkdir -p dist && browserify --external secp256k1 -o dist/evt.js -s EVT lib/index.js && uglifyjs dist/evt.js --compress --mangle -o dist/evt.min.js",
-        "build_browser_test": "npm run build && mkdir -p dist && browserify --external secp256k1 -o dist/evt-test.js lib/*.test.js"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/everitoken/evtjs.git"
-    },
-    "keywords": [
-        "everiToken",
-        "Blockchain",
-        "evt"
+  "name": "evtjs",
+  "version": "5.6.1",
+  "description": "Javascript API Bindings for the everiToken blockchain.",
+  "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
+  "scripts": {
+    "test": "mocha --use_strict src/*.test.js",
+    "test_lib": "mocha --use_strict lib/*.test.js",
+    "coverage": "nyc --reporter=html npm test",
+    "coveralls": "npm run coverage && cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "build": "babel --copy-files src --out-dir lib",
+    "build_browser": "npm run build && mkdir -p dist && browserify --external secp256k1 -o dist/evt.js -s EVT lib/index.js && uglifyjs dist/evt.js --compress --mangle -o dist/evt.min.js",
+    "build_browser_test": "npm run build && mkdir -p dist && browserify --external secp256k1 -o dist/evt-test.js lib/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/everitoken/evtjs.git"
+  },
+  "keywords": [
+    "everiToken",
+    "Blockchain",
+    "evt"
+  ],
+  "author": "Ceeji Cheng, everiToken Core Team and contributors",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/everiToken/evtjs/issues"
+  },
+  "homepage": "https://everitoken.io/",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^6.26.0",
+    "browserify": "^14.4.0",
+    "camel-case": "^3.0.0",
+    "coveralls": "^3.0.0",
+    "jsdoc-to-markdown": "^3.0.4",
+    "mocha": "^5.2.0",
+    "nyc": "^11.4.1",
+    "uglify-js": "^3.4.5"
+  },
+  "dependencies": {
+    "@types/node": "^12.0.2",
+    "babel-preset-env": "^1.7.0",
+    "bs58": "^4.0.1",
+    "create-hash": "^1.1.3",
+    "create-hmac": "^1.1.7",
+    "ecurve": "^1.0.6",
+    "evt-fcbuffer": "^2.2.0",
+    "qrcode": "^1.2.0",
+    "randombytes": "^2.0.6",
+    "ripemd160": "^2.0.2"
+  },
+  "optionalDependencies": {
+    "secp256k1": "^3.8.0"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "> 0.25%",
+              "last 2 versions"
+            ],
+            "node": "8.1"
+          },
+          "debug": false,
+          "include": [],
+          "exclude": []
+        }
+      ]
     ],
-    "author": "Ceeji Cheng, everiToken Core Team and contributors",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/everiToken/evtjs/issues"
-    },
-    "homepage": "https://everitoken.io/",
-    "devDependencies": {
-        "babel-cli": "^6.26.0",
-        "babel-core": "^6.26.0",
-        "babel-plugin-syntax-async-functions": "^6.13.0",
-        "babel-plugin-transform-regenerator": "^6.26.0",
-        "babel-plugin-transform-runtime": "^6.23.0",
-        "babel-preset-es2015": "^6.24.1",
-        "babel-runtime": "^6.26.0",
-        "browserify": "^14.4.0",
-        "camel-case": "^3.0.0",
-        "coveralls": "^3.0.0",
-        "jsdoc-to-markdown": "^3.0.4",
-        "mocha": "^5.2.0",
-        "nyc": "^11.4.1",
-        "uglify-js": "^3.4.5"
-    },
-    "dependencies": {
-        "@types/node": "^12.0.2",
-        "babel-preset-env": "^1.7.0",
-        "bs58": "^4.0.1",
-        "create-hash": "^1.1.3",
-        "create-hmac": "^1.1.7",
-        "ecurve": "^1.0.6",
-        "evt-fcbuffer": "^2.2.0",
-        "qrcode": "^1.2.0",
-        "randombytes": "^2.0.6",
-        "ripemd160": "^2.0.2"
-    },
-    "optionalDependencies": {
-        "secp256k1": "^3.5.2"
-    },
-    "babel": {
-        "presets": [
-            [
-                "env",
-                {
-                    "targets": {
-                        "browsers": [
-                            "> 0.25%",
-                            "last 2 versions"
-                        ],
-                        "node": "8.1"
-                    },
-                    "debug": false,
-                    "include": [],
-                    "exclude": []
-                }
-            ]
-        ],
-        "plugins": [
-            "syntax-async-functions",
-            "transform-regenerator",
-            [
-                "transform-runtime",
-                {
-                    "helpers": true,
-                    "polyfill": true,
-                    "regenerator": true,
-                    "moduleName": "babel-runtime"
-                }
-            ]
-        ]
-    }
+    "plugins": [
+      "syntax-async-functions",
+      "transform-regenerator",
+      [
+        "transform-runtime",
+        {
+          "helpers": true,
+          "polyfill": true,
+          "regenerator": true,
+          "moduleName": "babel-runtime"
+        }
+      ]
+    ]
+  }
 }
