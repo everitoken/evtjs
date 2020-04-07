@@ -10,7 +10,7 @@ const PrivateKey = require("./key_private");
 
 let secp256k1 = null;
 try {
-    secp256k1 = require("secp256k1");
+    // secp256k1 = require("secp256k1"); temporaryly stop C-bindings
 }
 catch (e) { /* Do nothing */ }
 
